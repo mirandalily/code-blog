@@ -17,7 +17,22 @@ blog.createArticles = function() {
   }
 }
 
+
 $(document).ready(function() {
   blog.sortRawData();
   blog.createArticles();
+  $('article p:not(:first-child)').hide();
+  $('a.read-more').on('click', function(event) {
+    event.preventDefault();
+    $(this).parent().find('p').fadeIn();
+    $(this).hide();
+  });
 });
+
+
+
+// option 2
+// $(function () {
+//   blog.sortRawData();
+//   blog.createArticles();
+// });
