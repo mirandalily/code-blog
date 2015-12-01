@@ -1,24 +1,41 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <link rel = "stylesheet" type = "text/css" href="styles/styles.css">
+    <script src="scripts/jquery.js"></script>
+    <script src="scripts/article.js"></script>
+    <script src="scripts/blog.js"></script>
+    <script src="scripts/blogArticle.js"></script>
     <title>
-
+      Miranda's Blog
     </title>
   </head>
   <body>
     <header>
       <h1>
+        Miranda's Blog
       </h1>
       <nav>
+        <ul>
+          <li>Articles</li>
+          <li>About (coming soon)</li>
+          <li>Twitter</li>
+          <li><a href="https://github.com/mirandalily">Github</a></li>
+        </ul>
       </nav>
     </header>
     <main>
-      <article>
-
+      <article id="template">
+        <h1 class="author"></h1>
+        <h2 class="title"></h2>
+        <div class="post"></div>
+        <h3 class="publishdate"></h3>
+        <h3 class="category"></h3>
       </article>
     </main>
     <footer>
 
     </footer>
+
   </body>
 </html>
