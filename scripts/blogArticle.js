@@ -194,14 +194,13 @@ Article.prototype.toHTML = function() {
   $('main').append($clonedArticle);
   }
 
+rawData.sort(function(a, b) {
+  if (a.publishedOn > b.publishedOn) {return -1;}
+  if (a.publishedOn < b.publishedOn) {return 1;}
+  return 0;
+});
 
 for (var i = 0; i < rawData.length; i++) {
   var temp = new Article (rawData[i]);
   temp.toHTML();
 }
-
-articles.sort(function(a,b){
-var c = new Date(a.publishedOn);
-var d = new Date(b.publishedOn);
-return c-d;
-});
