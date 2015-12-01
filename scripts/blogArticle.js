@@ -1,15 +1,7 @@
-var Article = function(props) {
-  this.author = props.author;
-  this.title = props.title;
-  this.body = props.body;
-  this.publishedOn = props.publishedOn;
-}
+var blog = {};
+var articles = [];
 
-Article.prototype.toHTML = function() {
-
-}
-
-blog.rawData = [
+var rawData = [
   {
     title:       'Bacon Ipsum',
     category:    'food',
@@ -180,3 +172,36 @@ blog.rawData = [
 
   },
 ];
+
+var Article = function(props) {
+  this.author = props.author;
+  this.title = props.title;
+  this.body = props.body;
+  this.category = props.category;
+  this.publishedOn = props.publishedOn;
+  this.authorUrl = props.authorUrl;
+  articles.push(this);
+}
+
+Article.prototype.toHTML = function() {
+  var $clonedArticle = $('article#template').clone();
+  $clonedArticle.removeAttr('id');
+  $clonedArticle.find('h1.author').html('<a href="' + articles[i].authorUrl + '">' + articles[i].author + '</a>');
+  $clonedArticle.find('h2.title').html(articles[i].title);
+  $clonedArticle.find('div.post').html(articles[i].body);
+  $clonedArticle.find('h3.publishdate').html(articles[i].publishedOn);
+  $clonedArticle.find('h3.category').html(articles[i].category);
+  $('main').append($clonedArticle);
+  }
+
+
+for (var i = 0; i < rawData.length; i++) {
+  var temp = new Article (rawData[i]);
+  temp.toHTML();
+}
+
+articles.sort(function(a,b){
+var c = new Date(a.publishedOn);
+var d = new Date(b.publishedOn);
+return c-d;
+});
