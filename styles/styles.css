@@ -26,3 +26,11 @@ nav li {
   margin-left: 2%;
   margin-right: 2%;
 }
+
+.tab-content.hide {
+  display:none;
+}
+
+.tab-content.active {
+  display: block;
+}
