@@ -3,6 +3,7 @@
   <head>
     <link rel = "stylesheet" type = "text/css" href="styles/styles.css">
     <script src="scripts/jquery.js"></script>
+    <script src="scripts/tabs.js"></script>
     <script src="scripts/article.js"></script>
     <script src="scripts/blog.js"></script>
     <script src="scripts/blogArticle.js"></script>
@@ -17,22 +18,32 @@
       </h1>
       <nav>
         <ul>
-          <li>Articles</li>
-          <li>About (coming soon)</li>
+          <li class='tab' data-content='articles'><a href="#" class='articles'>Articles</a></li>
+          <li class='tab' data-content='about'><a href="#" class='about'>About</a></li>
           <li>Twitter</li>
           <li><a href="https://github.com/mirandalily">Github</a></li>
         </ul>
       </nav>
     </header>
+    <select placeholder="Authors" name="authors" id="authorfilter">
+      <option id="authoroption"></option>
+    </select>
+    <select name="categories" id="categoryfilter">
+      <option id="categoryoption"></option>
+    </select>
+    <section id='about' class='tab-content'></section>
+    <section id='articles' class='tab-content'>
     <main>
       <article id="template">
         <h1 class="author"></h1>
         <h2 class="title"></h2>
         <div class="post"></div>
+        <a href="#" class="read-more"></a>
         <h3 class="publishdate"></h3>
         <h3 class="category"></h3>
       </article>
     </main>
+    </section>
     <footer>
 
     </footer>
