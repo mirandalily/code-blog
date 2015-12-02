@@ -27,10 +27,10 @@ nav li {
   margin-right: 2%;
 }
 
-.tab-content-hide{
-  display: block;
+.tab-content.hide {
+  display:none;
 }
 
-.tab-content-active{
+.tab-content.active {
   display: block;
 }
