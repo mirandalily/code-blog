@@ -64,6 +64,8 @@ $(document).ready(function() {
     for (var i = 0; i < blog.articles.length; i++) {
       if (blog.articles[i].author === event.target.value) {
         blog.articles[i].toHTML();
+      } else if (event.target.value === "All") {
+        $('.blogpost').show();
       }
     }
   })
@@ -72,6 +74,8 @@ $(document).ready(function() {
     for (var i = 0; i < blog.articles.length; i++) {
       if (blog.articles[i].category === event.target.value) {
         blog.articles[i].toHTML();
+      } else if (event.target.value === "All") {
+        $('.blogpost').show();
       }
     }
   })
