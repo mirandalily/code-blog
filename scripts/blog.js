@@ -60,7 +60,7 @@ $(document).ready(function() {
     $(this).hide();
   });
   $('select#authorfilter').on('change', function(event) {
-    $('.blogpost').remove();
+    $('.blogpost').hide();
     for (var i = 0; i < blog.articles.length; i++) {
       if (blog.articles[i].author === event.target.value) {
         blog.articles[i].toHTML();
@@ -68,7 +68,7 @@ $(document).ready(function() {
     }
   })
   $('select#categoryfilter').on('change', function(event){
-    $('.blogpost').remove();
+    $('.blogpost').hide();
     for (var i = 0; i < blog.articles.length; i++) {
       if (blog.articles[i].category === event.target.value) {
         blog.articles[i].toHTML();
