@@ -15,7 +15,7 @@ header {
   padding: 20px;
   margin-top: -20px;
   margin-left: -20px;
-  position: relative;
+  position: relative
 }
 
 
@@ -63,6 +63,8 @@ nav ul li {
 
 
 /*Drop Down Menu*/
+
+
 form span{
   font-family: 'Open Sans', sans-serif;
   font-weight: 400;
@@ -178,6 +180,7 @@ footer {
 #footerinfo p{
   line-height: .4em;
 }
+
 
 
 @media screen and (min-width: 400px) {
