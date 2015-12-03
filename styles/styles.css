@@ -1,30 +1,54 @@
-main {
-  width: 65%;
-  margin: 0 auto;
+a {
+  text-decoration: none;
 }
 
-main img{
-  height: 30%;
-  width: 30%;
-  margin: 2%;
+body {
+  background: #4CB8C4; /* fallback for old browsers */
+  background: -webkit-linear-gradient(to left, #4CB8C4 , #3CD3AD); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to left, #4CB8C4 , #3CD3AD); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+/*Header & Navigation*/
+
+header {
+  background: white;
+  width: 100%;
+  padding: 20px;
+  margin-top: -20px;
+  margin-left: -20px;
+  position: relative;
 }
 
-h1.author {
-  font-size: 15px;
+
+header h1 {
+  display: block;
+  text-align: center;
+  font-family: 'Abril Fatface', cursive;
+  margin-bottom: -8px;
+}
+
+header p {
+  display: block;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 11px;
+  font-family: 'Lato', sans-serif;
+}
+
+nav ul li {
+  display: block;
 }
 
 nav {
   margin-bottom: 50px;
+  margin-top: -13px;
 }
 
 nav ul li {
   list-style: none;
   display: inline;
-}
-
-nav li {
-  margin-left: 2%;
-  margin-right: 2%;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
+  text-transform: uppercase;
 }
 
 .tab-content.hide {
@@ -33,4 +57,314 @@ nav li {
 
 .tab-content.active {
   display: block;
+}
+
+/*Hamburger menu*/
+
+
+/*Drop Down Menu*/
+form span{
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+  text-transform: uppercase;
+  font-size: 13px;
+}
+
+#cat select{
+  width: 45%;
+  margin-left: 10px;
+}
+
+#auth select{
+  width: 45%;
+  margin-left: 23px;
+}
+
+#cat {
+  background: white;
+  padding: 10px;
+  border-radius: 0px 0px 4px 4px;
+  -moz-border-radius: 0px 0px 4px 4px;
+  -webkit-border-radius: 0px 0px 4px 4px;
+  border: 0px solid #000000;
+}
+
+#auth {
+  background: white;
+  padding: 10px;
+  border-radius: 4px 4px 0px 0px;
+  -moz-border-radius: 4px 4px 0px 0px;
+  -webkit-border-radius: 4px 4px 0px 0px;
+  border: 0px solid #000000;
+}
+
+/*Blog & Articles*/
+
+main {
+  width: 95%;
+  margin: 0 auto;
+}
+
+article {
+  margin-bottom: 15px;
+  padding: 10px;
+  background: white;
+  border-radius: 4px 4px 4px 4px;
+  -moz-border-radius: 4px 4px 4px 4px;
+  -webkit-border-radius: 4px 4px 4px 4px;
+  border: 0px solid #000000;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 13px;
+  }
+
+
+.read-more {
+  text-transform: uppercase;
+  font-size: 13px;
+}
+
+main img{
+  /*height: 0%;*/
+  width: 90%;
+  margin: 15px;
+}
+
+h3.category{
+  font-size: 12px;
+  text-transform: uppercase;
+  text-align: right;
+  color: black;
+}
+
+.publishdate {
+  font-size: 11px;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+  margin-top: -15px;
+}
+
+h1.author {
+  margin-top: -15px;
+  font-size: 12px;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+  text-transform: lowercase;
+}
+
+h2.title {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+  font-size: 26px;
+  text-transform: uppercase;
+}
+
+#template {
+  margin-bottom: 0;
+  border: none;
+  background: none;
+  border-radius: none;
+  box-shadow: none;
+}
+
+/*Footer*/
+
+footer {
+  background: white;
+  padding: 40px;
+  margin-left: -10px;
+  margin-right: -10px;
+}
+
+#footerinfo p{
+  line-height: .4em;
+}
+
+
+@media screen and (min-width: 400px) {
+
+  .hamburger{
+    background:none;
+    position:absolute;
+    top:0;
+    left:0;
+    line-height:45px;
+    padding:0px 15px 0px 15px;
+    color:black;
+    border:0;
+    font-size:1.4em;
+    font-weight:bold;
+    cursor:pointer;
+    outline:none;
+    z-index:10000000000000;
+  }
+  .cross{
+    background:none;
+    position:absolute;
+    top:0px;
+    left:0;
+    padding:0px 15px 0px 15px;
+    color:black;
+    border:0;
+    font-size:3em;
+    line-height:65px;
+    font-weight:bold;
+    cursor:pointer;
+    outline:none;
+    z-index:10000000000000;
+  }
+
+  .nav {
+    z-index:1000000;
+    font-weight:bold;
+    font-size:0.8em;
+    width:100%;
+    background:#131313;
+    /*position:absolute;*/
+    text-align:left;
+  }
+
+  .nav ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    list-style-image: none;
+  }
+
+  .nav li {
+    display: block;
+    padding:15px 0 15px 20px;
+    border-bottom:#1d1f20 1px solid;
+  }
+
+  .nav li:hover{
+    display: block;
+    background:#181818;
+    padding:15px 0 15px 20px;
+    border-bottom:#1d1f20 1px solid;
+  }
+
+  .nav ul li a {
+    text-decoration:none;
+    margin: 0px;
+    color:#fff;
+  }
+
+  .nav ul li a:hover {
+    color: #fff;
+    text-decoration:none;
+  }
+
+  .nav a {
+    text-decoration:none;
+    color:white;
+  }
+
+  .nav a:hover {
+    text-decoration:none;
+    color:white;
+  }
+
+  .glyphicon-home{
+    color:white;
+    font-size:1.5em;
+    margin-top:5px;
+    margin:0 auto;
+  }
+
+  nav {
+    margin-left: -50px;
+  }
+
+#cat {
+  width: 42%;
+  margin-left: 20px;
+  border-radius: 4px 4px 4px 4px;
+  -moz-border-radius: 4px 4px 4px 4px;
+  -webkit-border-radius: 4px 4px 4px 4px;
+}
+#cat select{
+  width: 40%;
+  margin-left: 10px;
+}
+
+#auth {
+  width: 42%;
+  float: right;
+  margin-right: 20px;
+  border-radius: 4px 4px 4px 4px;
+  -moz-border-radius: 4px 4px 4px 4px;
+  -webkit-border-radius: 4px 4px 4px 4px;
+}
+
+#auth select{
+  width: 45%;
+  margin-left: 23px;
+}
+
+}
+
+@media screen and (min-width: 900px) {
+
+article {
+  padding: 30px;
+  width: 80%;
+  margin: 0 auto;
+  margin-bottom: 20px;
+}
+
+article img {
+  width: 70%;
+}
+
+h2.title {
+  text-align: center;
+}
+
+h1.author {
+  text-align: center;
+}
+
+h3.publishdate {
+  text-align: center;
+}
+
+form {
+  margin-bottom: -20px;
+}
+
+}
+
+@media screen and (min-width: 1075px) {
+
+  #cat {
+    width: 30%;
+    margin-left: 15%;
+    border-radius: 4px 4px 4px 4px;
+    -moz-border-radius: 4px 4px 4px 4px;
+    -webkit-border-radius: 4px 4px 4px 4px;
+  }
+  #cat select{
+    width: 60%%;
+    margin-left: 10px;
+  }
+
+  #auth {
+    width: 30%;
+    float: right;
+    margin-right: 15%;
+    border-radius: 4px 4px 4px 4px;
+    -moz-border-radius: 4px 4px 4px 4px;
+    -webkit-border-radius: 4px 4px 4px 4px;
+  }
+
+  #auth select{
+    width: 50%;
+    margin-left: 10px;
+  }
+
+article {
+  width: 60%
+}
+
+
 }
