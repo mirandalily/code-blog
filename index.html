@@ -2,6 +2,10 @@
 <html>
   <head>
     <link rel = "stylesheet" type = "text/css" href="styles/styles.css">
+    <link href='https://fonts.googleapis.com/css?family=Lato:300' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Abril+Fatface' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
     <script src="scripts/jquery.js"></script>
     <script src="scripts/tabs.js"></script>
     <script src="scripts/article.js"></script>
@@ -13,52 +17,66 @@
   </head>
   <body>
   <header>
+    <button class="hamburger">&#9776;</button>
+    <button class="cross">&#735;</button>
     <h1>
-      Miranda's Blog
+      Miranda Raymond
     </h1>
-    <nav>
-      <ul class="nav nav-tabs">
-        <li data-content='about'>
-          <a href="#tab1" class='articles' data-content='articles'>Articles</a>
-        </li>
-        <li class='active' data-content='about'>
-          <a href="#tab2">About</a>
-        </li>
-        <li>Twitter</li>
-        <li>
-          <a href="https://github.com/mirandalily">Github</a>
-        </li>
-      </ul>
-    </nav>
+    <p>-- front-end web developer --</p>
   </header>
+  <nav>
+    <ul class="nav nav-tabs">
+      <li data-content='about'>
+        <a href="#tab1" class='articles' data-content='articles'>Articles</a>
+      </li>
+      <li class='active' data-content='about'>
+        <a href="#tab2">About</a>
+      </li>
+      <li>
+        <a href="#">Twitter</a>
+      </li>
+      <li>
+        <a href="https://github.com/mirandalily">Github</a>
+      </li>
+    </ul>
+  </nav>
+  <div class="site-wrap">
   <section id='tab1' class='tab-content active'>
-    <div>
       <form>
+        <div id="auth">
+        <span id="filterauth">Filter By Author:</span>
         <select placeholder="Authors" name="authors" id="authorfilter">
           <option id="authoroption"></option>
         </select>
+      </div>
+      <div id="cat">
+        <span id="filterauth">Filter By Category:</span>
         <select name="categories" id="categoryfilter">
           <option id="categoryoption"></option>
         </select>
+      </div>
       </form>
       <main>
         <article id="template">
-          <h1 class="author"></h1>
           <h2 class="title"></h2>
+          <h1 class="author"></h1>
+          <h3 class="publishdate"></h3>
           <div class="post"></div>
           <a href="#" class="read-more"></a>
-          <h3 class="publishdate"></h3>
           <h3 class="category"></h3>
         </article>
       </main>
     </div>
     </section>
-    <section id='tab2' class='tab-content hide'>
-      <div>Test.</div>
-    </section>
-    <footer>
-
-    </footer>
-
+  <section id='tab2' class='tab-content hide'>
+    <div>Test.</div>
+  </section>
+  <footer>
+    <div id="footerinfo">
+      <p>Miranda Raymond</p>
+      <p>Seattle, WA</p>
+    </div>
+  </footer>
+  </div>
   </body>
 </html>
