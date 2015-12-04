@@ -6,11 +6,11 @@ var Article = function(props) {
   this.category = props.category;
   this.publishedOn = props.publishedOn;
   this.authorUrl = props.authorUrl;
-}
+};
 
 Article.prototype.toHTML = function() {
   var source = $("#articletemplate").html();
   var template = Handlebars.compile(source);
   var result = template(this);
   $('.blogart').append(result);
-}
+};

@@ -15,7 +15,7 @@ blog.createArticles = function() {
     blog.articles.push(temp);
     temp.toHTML();
   }
-}
+};
 
 blog.populateAuthors = function() {
   for (var i = 0; i < this.articles.length; i++) {
@@ -24,7 +24,7 @@ blog.populateAuthors = function() {
     $populateAuthor.removeAttr('id').text(currentAuthor);
     $('#authorfilter').append($populateAuthor);
   }
-}
+};
 
 blog.populateCategories = function() {
   for (var i = 0; i < this.articles.length; i++) {
@@ -33,7 +33,7 @@ blog.populateCategories = function() {
     $populateCategory.removeAttr('id').text(currentCategory);
     $('#categoryfilter').append($populateCategory);
   }
-}
+};
 
 
 $(document).ready(function() {
