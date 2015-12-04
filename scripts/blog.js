@@ -7,7 +7,7 @@ blog.sortRawData = function() {
     if (a.publishedOn < b.publishedOn) {return 1;}
     return 0;
   });
-}
+};
 
 blog.createArticles = function() {
   for (var i = 0; i < blog.rawData.length; i++) {
@@ -78,7 +78,7 @@ $(document).ready(function() {
         $('.blogpost').show();
       }
     }
-  })
+  });
       $( ".cross" ).hide();
       // $( ".nav" ).hide();
       $( ".hamburger" ).click(function() {
