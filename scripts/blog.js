@@ -41,18 +41,31 @@ $(document).ready(function() {
   blog.createArticles();
   blog.populateAuthors();
   blog.populateCategories();
-  $('.nav-tabs > li > a').click(function(event) {
+  // $('.nav-tabs > li > a').click(function(event) {
+  //   event.preventDefault();
+  //   var active_tab_selector = $('.nav-tabs > li.active > a').attr('href');
+  //   var actived_nav = $('.nav-tabs > li.active');
+  //   actived_nav.removeClass('active');
+  //   $(this).parents('li').addClass('active');
+  //   $(active_tab_selector).removeClass('active');
+  //   $(active_tab_selector).addClass('hide');
+  //   var target_tab_selector = $(this).attr('href');
+  //   $(target_tab_selector).removeClass('hide');
+  //   $(target_tab_selector).addClass('active');
+  // })
+
+  $('.aboutNav').click(function(event) {
     event.preventDefault();
-    var active_tab_selector = $('.nav-tabs > li.active > a').attr('href');
-    var actived_nav = $('.nav-tabs > li.active');
-    actived_nav.removeClass('active');
-    $(this).parents('li').addClass('active');
-    $(active_tab_selector).removeClass('active');
-    $(active_tab_selector).addClass('hide');
-    var target_tab_selector = $(this).attr('href');
-    $(target_tab_selector).removeClass('hide');
-    $(target_tab_selector).addClass('active');
-  })
+    $('#tab1').hide();
+    $('#tab2').show();
+  });
+
+  $('.articleNav').click(function(event) {
+    event.preventDefault();
+    $('#tab2').hide();
+    $('#tab1').show();
+  });
+
   $('article p:not(:first-child)').hide();
   $('a.read-more').on('click', function(event) {
     event.preventDefault();
@@ -60,23 +73,21 @@ $(document).ready(function() {
     $(this).hide();
   });
   $('select#authorfilter').on('change', function(event) {
-    $('.blogpost').hide();
-    for (var i = 0; i < blog.articles.length; i++) {
-      if (blog.articles[i].author === event.target.value) {
-        blog.articles[i].toHTML();
-      } else if (event.target.value === "All") {
-        $('.blogpost').show();
-      }
+    if (event.target.value === 'All') {
+      $('.blogpost').show();
+    } else {
+      $('.blogpost').hide().filter(function() {
+        return $(this).attr('data-author') === event.target.value.replace(/\ /g, '');
+      }).show();
     }
-  })
+  });
   $('select#categoryfilter').on('change', function(event){
-    $('.blogpost').hide();
-    for (var i = 0; i < blog.articles.length; i++) {
-      if (blog.articles[i].category === event.target.value) {
-        blog.articles[i].toHTML();
-      } else if (event.target.value === "All") {
-        $('.blogpost').show();
-      }
+    if (event.target.value === 'All') {
+      $('.blogpost').show();
+    } else {
+      $('.blogpost').hide().filter(function() {
+        return $(this).attr('data-category') === event.target.value;
+      }).show();
     }
   })
       $( ".cross" ).hide();
