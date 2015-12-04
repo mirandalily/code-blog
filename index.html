@@ -7,13 +7,24 @@
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
     <script src="scripts/jquery.js"></script>
-    <script src="scripts/tabs.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.js"></script>
     <script src="scripts/article.js"></script>
     <script src="scripts/blog.js"></script>
     <script src="scripts/blogArticle.js"></script>
+    <script src="scripts/util.js"></script>
     <title>
       Miranda's Blog
     </title>
+    <script id="articletemplate" type="text/x-handlebars-template">
+        <article class="blogpost" data-author={{authorSlug}} data-category={{category}}>
+          <h2>{{title}}</h2>
+          <h1>{{author}}</h1>
+          <h3 class="publishdate">{{publishedOn}}</h3>
+          <div class="post">{{{body}}}</div>
+          <a href="#" class="read-more">Read More...</a>
+          <h3 class="category">{{category}}</h3>
+        </article>
+    </script>
   </head>
   <body>
   <header>
@@ -22,15 +33,15 @@
     <h1>
       Miranda Raymond
     </h1>
-    <p>-- front-end web developer --</p>
+    <p>-- code blog --</p>
   </header>
   <nav>
     <ul class="nav nav-tabs">
-      <li data-content='about'>
-        <a href="#tab1" class='articles' data-content='articles'>Articles</a>
+      <li>
+        <a href="" class="articleNav">Articles</a>
       </li>
-      <li class='active' data-content='about'>
-        <a href="#tab2">About</a>
+      <li>
+        <a href="" class="aboutNav">About</a>
       </li>
       <li>
         <a href="#">Twitter</a>
@@ -45,26 +56,19 @@
       <form>
         <div id="auth">
         <span id="filterauth">Filter By Author:</span>
-        <select placeholder="Authors" name="authors" id="authorfilter">
-          <option id="authoroption"></option>
+        <select name="authors" id="authorfilter">
+          <option id="authoroption">All</option>
         </select>
       </div>
       <div id="cat">
         <span id="filterauth">Filter By Category:</span>
         <select name="categories" id="categoryfilter">
-          <option id="categoryoption"></option>
+          <option id="categoryoption">All</option>
         </select>
       </div>
       </form>
       <main>
-        <article id="template">
-          <h2 class="title"></h2>
-          <h1 class="author"></h1>
-          <h3 class="publishdate"></h3>
-          <div class="post"></div>
-          <a href="#" class="read-more"></a>
-          <h3 class="category"></h3>
-        </article>
+        <div class="blogart"></div>
       </main>
     </div>
     </section>
