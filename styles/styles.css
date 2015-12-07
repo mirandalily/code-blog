@@ -148,38 +148,6 @@ main img{
   margin: 15px;
 }
 
-.blogpost h3.category{
-  font-size: 12px;
-  text-transform: uppercase;
-  text-align: right;
-  color: black;
-}
-
-.blogpost .publishdate {
-  font-size: 11px;
-  font-family: 'Open Sans', sans-serif;
-  font-weight: 400;
-  margin-top: -15px;
-  float: left;
-}
-
-.blogpost .post {
-  margin-top: 30px;
-}
-
-.blogpost h1 {
-  font-size: 12px;
-  font-family: 'Open Sans', sans-serif;
-  font-weight: 400;
-  text-transform: lowercase;
-}
-
-.blogpost h2 {
-  font-family: 'Open Sans', sans-serif;
-  font-weight: 400;
-  font-size: 26px;
-  text-transform: uppercase;
-}
 
 #template {
   margin-bottom: 0;
