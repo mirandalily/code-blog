@@ -163,6 +163,10 @@ button.click {
   text-transform: uppercase;
 }
 
+#subtext {
+  margin-bottom: 20px;
+}
+
 @media screen and (max-width: 900px) {
 
 form input {
