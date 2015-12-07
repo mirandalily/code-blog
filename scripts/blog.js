@@ -36,35 +36,25 @@ blog.populateCategories = function() {
 };
 
 
-$(document).ready(function() {
-  blog.sortRawData();
-  blog.createArticles();
-  blog.populateAuthors();
-  blog.populateCategories();
-  // $('.nav-tabs > li > a').click(function(event) {
-  //   event.preventDefault();
-  //   var active_tab_selector = $('.nav-tabs > li.active > a').attr('href');
-  //   var actived_nav = $('.nav-tabs > li.active');
-  //   actived_nav.removeClass('active');
-  //   $(this).parents('li').addClass('active');
-  //   $(active_tab_selector).removeClass('active');
-  //   $(active_tab_selector).addClass('hide');
-  //   var target_tab_selector = $(this).attr('href');
-  //   $(target_tab_selector).removeClass('hide');
-  //   $(target_tab_selector).addClass('active');
-  // })
-
-  $('.aboutNav').click(function(event) {
-    event.preventDefault();
-    $('#tab1').hide();
-    $('#tab2').show();
-  });
-
+var tabs = function() {
   $('.articleNav').click(function(event) {
     event.preventDefault();
     $('#tab2').hide();
     $('#tab1').show();
   });
+  $('.aboutNav').click(function(event) {
+    event.preventDefault();
+    $('#tab1').hide();
+    $('#tab2').show();
+  });
+};
+
+$(document).ready(function() {
+  blog.sortRawData();
+  blog.createArticles();
+  blog.populateAuthors();
+  blog.populateCategories();
+  tabs();
 
   $('article p:not(:first-child)').hide();
   $('a.read-more').on('click', function(event) {
@@ -101,8 +91,8 @@ $(document).ready(function() {
     $( '.nav' ).slideToggle( 'slow', function() {
       $( '.cross' ).hide();
       $( '.hamburger' ).show();
+    });
   });
-});
 
 });
 // option 2

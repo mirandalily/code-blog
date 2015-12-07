@@ -1,4 +1,4 @@
-var PreviewArticle = function(prev){
+var PreviewArticle = function(prev) {
   this.author = prev.author;
   this.authorSlug = prev.author.replace(/\ /g, '');
   this.title = prev.title;
@@ -29,13 +29,13 @@ var getFormData = function () {
     authorUrl: $('input[name=authorUrl]').val(),
     title: $('input[name=title]').val(),
     category: $('input[name=category]').val(),
-    date: $('input[name=publishedOn]').val(),
+    publishedOn: $('input[name=publishedOn]').val(),
     body: $('textarea[name=body]').val()
   };
   return (grabber);
 };
 
-$('button').on('click', function(event) {
+$('button.click').on('click', function(event) {
   event.preventDefault();
   var formClick = getFormData();
   console.log(formClick);
@@ -49,6 +49,7 @@ $('form').change(function(){
   var formPreview = getFormData();
   var temp = new PreviewArticle(formPreview);
   temp.toHTML('#previewSection');
+
 });
 
 $('input[name=preview]').on('click', function(){
