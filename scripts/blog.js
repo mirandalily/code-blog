@@ -54,6 +54,7 @@ $(document).ready(function() {
   blog.createArticles();
   blog.populateAuthors();
   blog.populateCategories();
+  $('#tab2').hide();
   tabs();
 
   $('article p:not(:first-child)').hide();

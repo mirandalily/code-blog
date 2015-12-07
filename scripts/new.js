@@ -29,7 +29,8 @@ var getFormData = function () {
     title: $('input[name=title]').val(),
     category: $('input[name=category]').val(),
     publishedOn: $('input[name=publishedOn]').val(),
-    body: $('textarea[name=body]').val()
+    body: $(marked('textarea[name=body]')).val()
+    //need to add on marked to body somehow
   };
   return (grabber);
 };
@@ -39,6 +40,9 @@ $('button.click').on('click', function(event) {
   var formClick = getFormData();
   console.log(formClick);
   var temp2 = new PreviewArticle(formClick);
+  $('pre code').each(function(i, block) {
+    hljs().highlightBlock(block);
+  });
   temp2.toPlainText('#submitArea');
   // $('#submitArea').html(JSON.stringify(temp2));
 });
