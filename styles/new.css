@@ -169,6 +169,10 @@ button.click {
 
 @media screen and (max-width: 900px) {
 
+form{
+  width: 60%;
+}
+
 form input {
   width: 80%;
 }

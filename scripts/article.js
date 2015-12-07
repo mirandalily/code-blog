@@ -9,7 +9,7 @@ var Article = function(props) {
 };
 
 Article.prototype.toHTML = function() {
-  var source = $("#articletemplate").html();
+  var source = $('#articletemplate').html();
   var template = Handlebars.compile(source);
   var result = template(this);
   $('.blogart').append(result);

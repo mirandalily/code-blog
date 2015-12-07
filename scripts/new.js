@@ -19,7 +19,6 @@ PreviewArticle.prototype.toPlainText = function (textTarget) {
   var source = $('#textTemplate').html();
   var template = Handlebars.compile(source);
   var result = template(this);
-
   $(textTarget).html(result);
 };
 
