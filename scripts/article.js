@@ -8,9 +8,12 @@ var Article = function(props) {
   this.authorUrl = props.authorUrl;
 };
 
+Article.prototype.template = '';
+
 Article.prototype.toHTML = function() {
-  var source = $('#articletemplate').html();
-  var template = Handlebars.compile(source);
-  var result = template(this);
-  $('.blogart').append(result);
+  return this.template(this);
+};
+
+Article.prototype.toPlainText = function() {
+  return JSON.stringify(this);
 };

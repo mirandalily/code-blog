@@ -138,8 +138,8 @@ button.click {
   float: left;
 }
 
-.previewpost .post {
-  margin-top: 30px;
+.previewpost .body {
+  margin-top: 40px;
 }
 
 .previewpost h1 {
