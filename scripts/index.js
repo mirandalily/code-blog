@@ -11,7 +11,6 @@ var tabs = function() {
   });
 };
 
-
 var hideParagraphs = function() {
   $('article p:not(:first-child)').hide();
   $('a.read-more').on('click', function(event) {
@@ -63,7 +62,6 @@ $(document).ready(function() {
       $( '.hamburger' ).show();
     });
   });
-
 });
 
 $(document).ajaxSuccess(function(){
