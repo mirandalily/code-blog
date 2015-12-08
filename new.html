@@ -12,16 +12,16 @@
     <link href='https://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
 
     <title>New Post</title>
-    <script id="previewtemplate" type="text/x-handlebars-template">
+    <!-- <script id="previewtemplate" type="text/x-handlebars-template">
         <article class="previewpost" data-author={{authorSlug}} data-category={{category}}>
           <h2>{{title}}</h2>
           <h1>{{author}}</h1>
           <h3 class="publishdate">{{publishedOn}}</h3>
-          <div class="post">{{{body}}}</div>
+          <div class="body">{{{body}}}</div>
           <a href="#" class="read-more">Read More...</a>
           <h3 class="category">{{category}}</h3>
         </article>
-    </script>
+    </script> -->
     <script id="textTemplate" type="text/x-handlebars-template">
         <p>title: {{title}}</p>
         <p>category: {{category}}</p>
@@ -40,7 +40,7 @@
     </header>
 
     <main>
-    <form>
+    <form id="newpostform">
       <h1>Write a new blog</h1>
       <div class="row">
         <div class="six columns">
@@ -79,6 +79,8 @@
     <script src='https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.js'></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/0.3.5/marked.min.js"></script>
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.0.0/styles/default.min.css">
+    <script src='scripts/article.js'></script>
+    <script src='scripts/blog.js'></script>
     <script src='scripts/new.js'></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.0.0/highlight.min.js"></script>
   </body>
