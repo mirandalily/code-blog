@@ -35,12 +35,35 @@ $(function() {
     return $('<p>Number of authors: ' + numAuthors + '</p>');
   }
 
+  function $wordCount(articles) {
+    var all = pluck('markdown', articles);
+    var wordCount = distinct('markdown', articles);
+    var count = [];
+    all.forEach(function(e) {
+      var div = document.createElement('div');
+      div.innterHTML = e;
+      var text = div.textContent || div.innerText || '';
+      count.push(text.split(' ').length);
+    });
+    var total = count.reduce(function(a,b) {
+      return a + b;
+    });
+    return total;
+  }
+    // wordCount.replace(/[^\w\s]/g, "").split(/\s+/).reduce(function(map, wordCount){
+    // map[wordCount] = (map[wordCount]||0)+1;
+    // return map;
+    // return $('<p>Number of Words: ' + wordCount + '</p>');
+    //
+    // });
+
   var $statsComponent = function(blog) {
     var component = $('<div>');
     component.append([
       $headline,
       $numberOfArticles(blog),
-      $numberOfAuthors(blog)
+      $numberOfAuthors(blog),
+      $wordCount(blog)
     ]);
     return component;
   };
