@@ -36,13 +36,13 @@ $(function() {
   }
 
   function $wordCount(articles) {
-      var all = pluck('markdown', articles);
+    var all = pluck('markdown', articles);
     var wordCount = distinct('markdown', articles);
     var count = [];
     all.forEach(function(e) {
       var div = document.createElement('div');
       div.innterHTML = e;
-      var text = div.textContent || div.innerText || "";
+      var text = div.textContent || div.innerText || '';
       count.push(text.split(' ').length);
     });
     var total = count.reduce(function(a,b) {
