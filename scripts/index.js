@@ -21,6 +21,7 @@ var hideParagraphs = function() {
 };
 
 $(document).ready(function() {
+  
   $.get('template.html', function(data, msg, xhr) {
     Article.prototype.template = Handlebars.compile(data);
   });
@@ -31,6 +32,9 @@ $(document).ready(function() {
   $('#tab2').hide();
   tabs();
 
+  $.get('blogRawData.json').done(function(data) {
+    blog.rawData = data;
+  });
   $('select#authorfilter').on('change', function(event) {
     if (event.target.value === 'All') {
       $('.blogpost').show();
