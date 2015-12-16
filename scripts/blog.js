@@ -1,4 +1,5 @@
 var blog = {};
+blog.rawData = [];
 blog.articles = [];
 
 blog.sortRawData = function() {
